@@ -12,7 +12,7 @@ Payum gateway package for Uniteller. Based on [uniteller-php-sdk](https://github
 
 ## Install
 
-`composer require tmconsulting/payum-uniteller@0.1.*`
+`composer require tmconsulting/payum-uniteller-gateway@0.1.*`
 
 After composer installation, add some gateway to `PayumBuilder`:
 
