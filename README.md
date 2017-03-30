@@ -9,7 +9,7 @@
 <br />
 
 <p align="center">
-    <img src="https://travis-ci.org/tmconsulting/payum-uniteller.svg?branch=master" />
+    <img src="https://travis-ci.org/tmconsulting/payum-uniteller-gateway.svg?branch=master" />
     <img src="https://poser.pugx.org/tmconsulting/payum-uniteller-gateway/v/stable" />
     <img src="https://poser.pugx.org/tmconsulting/payum-uniteller-gateway/v/unstable" />
     <img src="https://poser.pugx.org/tmconsulting/payum-uniteller-gateway/license" />
