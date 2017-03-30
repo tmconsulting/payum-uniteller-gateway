@@ -1,5 +1,5 @@
 {
-  "name": "tmconsulting/payum-uniteller",
+  "name": "tmconsulting/payum-uniteller-gateway",
   "type": "library",
   "description": "The Payum Uniteller extension.",
   "keywords": [
