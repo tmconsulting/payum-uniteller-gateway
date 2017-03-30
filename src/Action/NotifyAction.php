@@ -1,24 +1,16 @@
 <?php
 namespace Payum\Uniteller\Action;
 
-use Payum\Core\Action\ActionInterface;
 use Payum\Core\Bridge\Spl\ArrayObject;
-use Payum\Core\GatewayAwareInterface;
-use Payum\Core\GatewayAwareTrait;
-use Payum\Core\Reply\HttpResponse;
-use Payum\Core\Request\Authorize;
 use Payum\Core\Exception\RequestNotSupportedException;
-use Payum\Core\Request\GetHumanStatus;
-use Payum\Core\Request\Notify;
+use Payum\Core\Reply\HttpResponse;
 use Payum\Core\Request\GetHttpRequest;
-use Payum\Core\Request\Sync;
-use Tmconsulting\Uniteller\Client;
+use Payum\Core\Request\Notify;
 use Payum\Uniteller\Action\Api\BaseApiAwareAction;
+use Tmconsulting\Uniteller\Client;
 
 class NotifyAction extends BaseApiAwareAction
 {
-    use GatewayAwareTrait;
-
     /**
      * {@inheritDoc}
      *

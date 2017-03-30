@@ -3,7 +3,17 @@
 <br />
 
 <p align="center">
-    <img src="https://www.uniteller.ru//local/templates/index/img/base/logo.svg" width="220">
+    <img src="https://www.uniteller.ru//local/templates/index/img/base/logo.svg" width="220" />
+</p>
+
+<br />
+
+<p align="center">
+    <img src="https://travis-ci.org/tmconsulting/payum-uniteller.svg?branch=master" />
+    <img src="https://poser.pugx.org/tmconsulting/payum-uniteller-gateway/v/stable" />
+    <img src="https://poser.pugx.org/tmconsulting/payum-uniteller-gateway/v/unstable" />
+    <img src="https://poser.pugx.org/tmconsulting/payum-uniteller-gateway/license" />
+    <img src="https://poser.pugx.org/tmconsulting/payum-uniteller-gateway/composerlock" />
 </p>
 
 <br />
@@ -12,7 +22,7 @@ Payum gateway package for Uniteller. Based on [uniteller-php-sdk](https://github
 
 ## Install
 
-`composer require tmconsulting/payum-uniteller-gateway@0.1.*`
+`composer require tmconsulting/payum-uniteller`
 
 After composer installation, add some gateway to `PayumBuilder`:
 
