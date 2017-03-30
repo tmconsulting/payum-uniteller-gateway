@@ -2,17 +2,14 @@
 namespace Payum\Uniteller\Action;
 
 use Payum\Core\Bridge\Spl\ArrayObject;
-use Payum\Core\GatewayAwareTrait;
+use Payum\Core\Exception\RequestNotSupportedException;
 use Payum\Core\Reply\HttpRedirect;
 use Payum\Core\Request\Capture;
-use Payum\Core\Exception\RequestNotSupportedException;
 use Payum\Uniteller\Action\Api\BaseApiAwareAction;
 use Tmconsulting\Uniteller\ClientInterface;
 
 class CaptureAction extends BaseApiAwareAction
 {
-    use GatewayAwareTrait;
-
     /**
      * {@inheritDoc}
      *

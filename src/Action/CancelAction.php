@@ -1,18 +1,15 @@
 <?php
 namespace Payum\Uniteller\Action;
 
-use Payum\Core\Action\ActionInterface;
 use Payum\Core\Bridge\Spl\ArrayObject;
 use Payum\Core\Exception\RequestNotSupportedException;
-use Payum\Core\GatewayAwareTrait;
 use Payum\Core\Request\Cancel;
-use Payum\Core\Request\Sync;
-use Tmconsulting\Uniteller\ClientInterface;
+use Payum\Uniteller\Action\Api\BaseApiAwareAction;
 
-class CancelAction implements ActionInterface
+// use Tmconsulting\Uniteller\ClientInterface;
+
+class CancelAction extends BaseApiAwareAction
 {
-    use GatewayAwareTrait;
-
     /**
      * {@inheritDoc}
      *

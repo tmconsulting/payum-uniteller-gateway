@@ -3,11 +3,9 @@ namespace Payum\Uniteller\Action;
 
 use Payum\Core\Action\ActionInterface;
 use Payum\Core\Bridge\Spl\ArrayObject;
+use Payum\Core\Exception\RequestNotSupportedException;
 use Payum\Core\GatewayAwareInterface;
 use Payum\Core\GatewayAwareTrait;
-use Payum\Core\Request\Authorize;
-use Payum\Core\Exception\RequestNotSupportedException;
-use Payum\Core\Request\GetHumanStatus;
 use Payum\Core\Request\GetStatusInterface;
 use Tmconsulting\Uniteller\Order\Status;
 
@@ -25,8 +23,6 @@ class StatusAction implements ActionInterface, GatewayAwareInterface
         RequestNotSupportedException::assertSupports($this, $request);
 
         $model = ArrayObject::ensureArrayObject($request->getModel());
-
-        file_put_contents('test.json', json_encode($model, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT), FILE_APPEND);
 
         if (null === $model['Order_IDP'] && null === $model['Status']) {
             $request->markNew();

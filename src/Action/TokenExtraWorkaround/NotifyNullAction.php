@@ -1,18 +1,15 @@
 <?php
 namespace Payum\Uniteller\Action\TokenExtraWorkaround;
 
-use Payum\Core\GatewayAwareTrait;
-use Payum\Core\Reply\HttpResponse;
 use Payum\Core\Exception\RequestNotSupportedException;
+use Payum\Core\Reply\HttpResponse;
+use Payum\Core\Request\GetHttpRequest;
 use Payum\Core\Request\GetToken;
 use Payum\Core\Request\Notify;
-use Payum\Core\Request\GetHttpRequest;
 use Payum\Uniteller\Action\Api\BaseApiAwareAction;
 
 class NotifyNullAction extends BaseApiAwareAction
 {
-    use GatewayAwareTrait;
-
     /**
      * {@inheritDoc}
      *
