@@ -45,10 +45,5 @@
   "scripts": {
     "test": "./vendor/phpunit/phpunit/phpunit",
     "coverage": "./vendor/phpunit/phpunit/phpunit --coverage-text"
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "1.3-dev"
-    }
   }
 }
