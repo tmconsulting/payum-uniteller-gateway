@@ -8,14 +8,30 @@
 namespace Payum\Uniteller\Tests\Action;
 
 use Payum\Core\Bridge\Spl\ArrayObject;
+use Payum\Core\Model\Token;
 use Payum\Core\Request\Capture;
+use Payum\Core\Tests\GenericActionTest;
 use Payum\Uniteller\Action\CaptureAction;
-use Payum\Uniteller\Tests\TestCase;
+use Payum\Uniteller\Tests\ApiAwareTestTrait;
+use Payum\Uniteller\Tests\GatewayAwareTestTrait;
+use Payum\Uniteller\Tests\MocksTrait;
 use Tmconsulting\Uniteller\Client;
 use Tmconsulting\Uniteller\Payment\Uri;
 
-class CaptureActionTest extends TestCase
+class CaptureActionTest extends GenericActionTest
 {
+    use MocksTrait, GatewayAwareTestTrait, ApiAwareTestTrait;
+
+    /**
+     * @var Generic
+     */
+    protected $requestClass = Capture::class;
+
+    /**
+     * @var string
+     */
+    protected $actionClass = CaptureAction::class;
+
     public function testWhenConstructedWithoutAnyArguments()
     {
         new CaptureAction();
@@ -83,6 +99,12 @@ class CaptureActionTest extends TestCase
         $action->setGateway($gatewayMock);
         $action->setApi($clientMock);
 
-        $action->execute(new Capture($model));
+        $token = new Token();
+        $token->setTargetUrl('targetUri');
+
+        $request = new Capture($token);
+        $request->setModel($model);
+
+        $action->execute($request);
     }
 }

@@ -24,19 +24,19 @@ class StatusAction implements ActionInterface, GatewayAwareInterface
 
         $model = ArrayObject::ensureArrayObject($request->getModel());
 
-        if (null === $model['Order_IDP'] && null === $model['Status']) {
+        if (null === $this->getOrderId($model) && null === $this->getParameter($model, 'Status')) {
             $request->markNew();
 
             return;
         }
 
-        if ($model['Order_IDP'] && null === $model['Status']) {
+        if ($this->getOrderId($model) && null === $this->getParameter($model, 'Status')) {
             $request->markPending();
 
             return;
         }
 
-        switch (Status::resolve($model['Status'])) {
+        switch (Status::resolve($this->getParameter($model, 'Status'))) {
             case Status::AUTHORIZED:
                 $request->markAuthorized();
                 break;
@@ -63,9 +63,36 @@ class StatusAction implements ActionInterface, GatewayAwareInterface
      */
     public function supports($request)
     {
-        return
-            $request instanceof GetStatusInterface &&
-            $request->getModel() instanceof \ArrayAccess
-        ;
+        return $request instanceof GetStatusInterface
+          && $request->getModel() instanceof \ArrayAccess;
+    }
+
+    /**
+     * @param $model
+     * @param $key
+     * @return mixed
+     */
+    protected function getParameter($model, $key)
+    {
+        if (array_key_exists($key, $model)) {
+            return $model[$key];
+        }
+
+        return null;
+    }
+
+    /**
+     * @param $model
+     * @return mixed
+     */
+    protected function getOrderId($model)
+    {
+        foreach (['Order_ID', 'Order_IDP'] as $item) {
+            if (array_key_exists($item, $model)) {
+                return $model[$item];
+            }
+        }
+
+        return null;
     }
 }
