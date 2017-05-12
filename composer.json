@@ -43,7 +43,7 @@
     }
   },
   "scripts": {
-    "test": "./vendor/phpunit/phpunit/phpunit",
+    "test": "./bin/phpunit",
     "coverage": "./vendor/phpunit/phpunit/phpunit --coverage-text"
   }
 }

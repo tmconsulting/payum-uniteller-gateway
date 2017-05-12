@@ -97,7 +97,7 @@ class PaymentController extends PayumController
 
 ## Tests
 
-`composer test`
+`./bin/phpunit`
 
 ## License
 

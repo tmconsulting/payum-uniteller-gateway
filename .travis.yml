@@ -30,4 +30,4 @@ before_script:
   - composer config --list --global
 
 script:
-  - composer test
+  - ./bin/phpunit
