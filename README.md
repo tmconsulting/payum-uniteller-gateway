@@ -10,6 +10,7 @@
 
 <p align="center">
     <img src="https://travis-ci.org/tmconsulting/payum-uniteller-gateway.svg?branch=master" />
+    <a href='https://coveralls.io/github/roquie/payum-uniteller?branch=master'><img src='https://coveralls.io/repos/github/roquie/payum-uniteller/badge.svg?branch=master' alt='Coverage Status' /></a>
     <img src="https://poser.pugx.org/tmconsulting/payum-uniteller-gateway/v/stable" />
     <img src="https://poser.pugx.org/tmconsulting/payum-uniteller-gateway/v/unstable" />
     <img src="https://poser.pugx.org/tmconsulting/payum-uniteller-gateway/license" />
