@@ -28,7 +28,7 @@ class NotifyAction extends BaseApiAwareAction
 
         $signature = $httpRequest->request['Signature'];
         if (! $client->getSignature()->verify($signature, $httpRequest->request)) {
-            // throw new HttpResponse('Notification (callback) signature is invalid.', 400);
+            throw new HttpResponse('Notification (callback) signature is invalid.', 400);
         }
 
         $model->replace($httpRequest->request);
