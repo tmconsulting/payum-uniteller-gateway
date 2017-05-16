@@ -36,4 +36,4 @@ script:
   - ./bin/phpunit --coverage-clover ./tests/logs/clover.xml
 
 after_script:
-  - php vendor/bin/coveralls -vvv
+  - php ./bin/coveralls -vvv
