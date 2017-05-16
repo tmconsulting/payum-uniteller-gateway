@@ -2,3 +2,6 @@ vendor/
 .idea/
 index.php
 examples/
+tests/logs/clover.xml
+tests/logs/coveralls-upload.json
+bin/coveralls
