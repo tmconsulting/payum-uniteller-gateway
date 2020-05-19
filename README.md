@@ -1,3 +1,8 @@
+This package deprecated and abandoned*.
+---------------------------------------
+
+But uniteller php sdk will be support and it moved to https://github.com/spacetab-io/uniteller-sdk-php
+
 # Payum Uniteller Gateway
 
 <br />
